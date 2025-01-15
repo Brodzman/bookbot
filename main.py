@@ -1,12 +1,14 @@
 def main():
     book_path = "books/frankenstein.txt"
+    print(f' --- Begin report of {book_path}\n')
     text = get_book_text(book_path)
     num_words = get_num_words(text)
-    print(f"{num_words} words found in the document")
+    print(f"{num_words} words found in the document\n")
     lowered_string = text.lower()
     num_characters = count_characters(lowered_string)
     for char_dict in num_characters:
         print(f'The \'{char_dict["char"]}\' character was found {char_dict["num"]} times')
+    print("\n--- End report ---")
 
 
 def count_characters(text):
