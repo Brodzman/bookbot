@@ -14,8 +14,16 @@ def count_characters(text):
             counter[character] += 1
         else:
             counter[character] = 1
-        
-    return counter
+    chars_list = []
+    for char, count in counter.items():
+        if char.isalpha():
+            char_dict = {'char': char, 'num': count}
+            chars_list.append(char_dict)
+    chars_list.sort(reverse=True, key=sort_on)
+    return chars_list
+
+def sort_on(dict):
+    return dict["num"]
 
 
 def get_num_words(text):
