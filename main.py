@@ -5,7 +5,9 @@ def main():
     print(f"{num_words} words found in the document")
     lowered_string = text.lower()
     num_characters = count_characters(lowered_string)
-    print(num_characters)
+    for char_dict in num_characters:
+        print(f'The \'{char_dict["char"]}\' character was found {char_dict["num"]} times')
+
 
 def count_characters(text):
     counter = {}
